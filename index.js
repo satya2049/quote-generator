@@ -19,7 +19,7 @@ function newQuote(){
     showSpinner();
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     console.log(quote);
-    quote.text.length > 50 ? quoteText.classList.add('long-quote'):
+    quote.text?.length > 50 ? quoteText.classList.add('long-quote'):
     quoteText.classList.remove('long-quote');
     quoteText.innerHTML = quote.text;
     authorName.innerHTML = quote.author.length ? quote.author : 'unKnown';
