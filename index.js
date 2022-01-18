@@ -19,10 +19,14 @@ function newQuote(){
     showSpinner();
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     console.log(quote);
-    quote.text?.length > 50 ? quoteText.classList.add('long-quote'):
+    if(quote.text){
+    quote.text.length > 50 ? quoteText.classList.add('long-quote'):
     quoteText.classList.remove('long-quote');
+    }
     quoteText.innerHTML = quote.text;
+    if(quote.author){
     authorName.innerHTML = quote.author.length ? quote.author : 'unKnown';
+    }
     HideSpinner();
 }
 async function quoteGenerator(){
